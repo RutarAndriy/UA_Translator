@@ -62,7 +62,7 @@
                     <archive>
                         <manifest>
                             <addClasspath>false</addClasspath>
-                            <mainClass>com.rutar.ua_translator.App</mainClass>
+                            <mainClass>com.rutar.ua_translator.UA_Translator_Demo</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
