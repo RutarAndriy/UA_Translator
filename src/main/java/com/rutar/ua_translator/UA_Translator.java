@@ -2,14 +2,18 @@ package com.rutar.ua_translator;
 
 import javax.swing.UIManager;
 
-// ............................................................................
-// @author RutarAndriy
-// 13.01.2024
+///////////////////////////////////////////////////////////////////////////////
+/**
+ * Бібліотека для українізації Swing-компонентів
+ * @author RutarAndriy
+ * 13.01.2024
+ */
 
 public class UA_Translator {
 
 // ............................................................................
 
+/** Масив ключів та значень мовного пакету */
 private static final Object[][] ua_locale = {
     
     { "FileChooser.openButtonText",          "Вибрати"       },
@@ -45,7 +49,9 @@ private static final Object[][] ua_locale = {
 };
 
 ///////////////////////////////////////////////////////////////////////////////
-// Ініціалізація мовного пакету
+/**
+ * Ініціалізація мовного пакету
+ */
 
 public static void init() {
 
@@ -56,8 +62,17 @@ public static void init() {
 }
 
 ///////////////////////////////////////////////////////////////////////////////
+/**
+ * Скидання мовного пакету
+ */
 
-public static Object[][] get_UA_locale() { return ua_locale; }
+public static void reset() {
+
+    for (Object[] parameter : ua_locale) {
+        UIManager.put(parameter[0], null);
+    }
+
+}
 
 ///////////////////////////////////////////////////////////////////////////////
 

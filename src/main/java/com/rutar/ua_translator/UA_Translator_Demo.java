@@ -1,18 +1,28 @@
 package com.rutar.ua_translator;
 
-// ............................................................................
-
 import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
+
+///////////////////////////////////////////////////////////////////////////////
+/**
+ * Демонстація використання бібліотеки UA_Translator
+ * @author RutarAndriy
+ * 13.01.2024
+ */
 
 public class UA_Translator_Demo {
 
 // ............................................................................
 
+/** Відступи по краях кнопок */
 private static final int INSET = 5;
 
 ///////////////////////////////////////////////////////////////////////////////
+/**
+ * Початковий метод програми
+ * @param args параметри запуску програми
+ */
 
 public static void main (String[] args) {
 
@@ -45,28 +55,19 @@ dialog.setVisible(true);
 }
 
 ///////////////////////////////////////////////////////////////////////////////
+/** Прослуховувач команд */
 
 private static final ActionListener listener = (ActionEvent ae) -> {
 
     String comand = ae.getActionCommand();
 
-    if (comand.equals("ua")) { UA_Translator.init(); }
-    else                     { reset_Default_Kays(); }
+    if (comand.equals("ua")) { UA_Translator.init();  }
+    else                     { UA_Translator.reset(); }
 
     JFileChooser chooser = new JFileChooser();
     chooser.showDialog(null, null);
 
 };
-
-///////////////////////////////////////////////////////////////////////////////
-
-private static void reset_Default_Kays() {
-
-    for (Object[] parameter : UA_Translator.get_UA_locale()) {
-        UIManager.put(parameter[0], null);
-        
-    }
-}
 
 ///////////////////////////////////////////////////////////////////////////////
 
