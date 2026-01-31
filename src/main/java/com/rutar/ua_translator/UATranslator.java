@@ -1,0 +1,96 @@
+package com.rutar.ua_translator;
+
+// ............................................................................
+/// Реалізація деяких бібліотечних методів
+/// @author Rutar_Andriy
+/// 31.01.2026
+
+public class UATranslator {
+
+// ============================================================================
+/// Розрахунок суми вхідних чисел
+/// @param numbers масив/перелік вхідних чисел
+/// @return сума вхідних чисел
+
+public static long sum (int ... numbers) {
+
+    if (numbers == null) { throw new NullPointerException(); }
+    else if (numbers.length == 0) { throw new IllegalArgumentException(); }
+    else if (numbers.length == 1) { return numbers[0]; }
+
+    else {
+
+        long result = numbers[0];
+
+        for (int z = 1; z < numbers.length; z++) {
+            result += numbers[z];
+        }
+
+        return result;
+    }    
+}
+
+// ============================================================================
+/// Розрахунок добутку вхідних чисел
+/// @param numbers масив/перелік вхідних чисел
+/// @return добуток вхідних чисел
+
+public static long product (int ... numbers) {
+
+    if (numbers == null) { throw new NullPointerException(); }
+    else if (numbers.length == 0) { throw new IllegalArgumentException(); }
+    else if (numbers.length == 1) { return numbers[0]; }
+
+    else {
+
+        long result = numbers[0];
+
+        for (int z = 1; z < numbers.length; z++) {
+            result *= numbers[z];
+        }
+
+        return result;
+    }
+}
+
+// ============================================================================
+/// Розрахунок середнього арифметичного значення
+/// @param numbers масив/перелік вхідних чисел
+/// @return середнє арифметичне значення
+
+public static double arithmeticMean (int ... numbers) {
+
+    if (numbers == null) { throw new NullPointerException(); }
+    else if (numbers.length == 0) { throw new IllegalArgumentException(); }
+    else if (numbers.length == 1) { return numbers[0]; }
+
+    else {
+
+        return sum(numbers) * 1d / numbers.length;
+
+    }
+}
+
+// ============================================================================
+/// Розрахунок середнього квадратичного значення
+/// @param numbers масив/перелік вхідних чисел
+/// @return середнє квадратичне значення
+
+public static double quadraticMean (int ... numbers) {
+
+    if (numbers == null) { throw new NullPointerException(); }
+    else if (numbers.length == 0) { throw new IllegalArgumentException(); }
+    else if (numbers.length == 1) { return numbers[0]; }
+
+    else {
+
+        for (int z = 0; z < numbers.length; z++)
+            { numbers[z] *= numbers[z]; }
+        
+        return Math.sqrt(sum(numbers) * 1d / numbers.length);
+    }
+}
+
+// Кінець класу UATranslator ==================================================
+
+}
