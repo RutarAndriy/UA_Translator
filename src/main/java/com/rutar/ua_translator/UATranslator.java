@@ -1,94 +1,47 @@
 package com.rutar.ua_translator;
 
+import java.io.*;
+import java.util.*;
+import javax.swing.*;
+
 // ............................................................................
-/// Реалізація деяких бібліотечних методів
+/// Додавання українського перекладу для основних swing-компонентів
 /// @author Rutar_Andriy
 /// 31.01.2026
 
 public class UATranslator {
 
+// Стандартні значення за замовчуванням
+private static final HashMap<Object, Object> default_values = new HashMap<>();
+
 // ============================================================================
-/// Розрахунок суми вхідних чисел
-/// @param numbers масив/перелік вхідних чисел
-/// @return сума вхідних чисел
+/// Ініціалізація мовного пакету
 
-public static long sum (int ... numbers) {
+public static void init() {
 
-    if (numbers == null) { throw new NullPointerException(); }
-    else if (numbers.length == 0) { throw new IllegalArgumentException(); }
-    else if (numbers.length == 1) { return numbers[0]; }
-
-    else {
-
-        long result = numbers[0];
-
-        for (int z = 1; z < numbers.length; z++) {
-            result += numbers[z];
-        }
-
-        return result;
-    }    
+    // Зчитуємо властивості з файлу ua.properties
+    Properties properties = new Properties();
+    try (InputStream is = UATranslator.class
+                         .getResourceAsStream("others/ua.properties"))
+        { properties.load(is); }
+    catch (Exception _) { }
+    
+    // Отримуємо системні значення та задаємо нові
+    properties.forEach((key, value) -> {
+        default_values.put(key, UIManager.get(key));
+        UIManager.put(key, value);
+    });
 }
 
 // ============================================================================
-/// Розрахунок добутку вхідних чисел
-/// @param numbers масив/перелік вхідних чисел
-/// @return добуток вхідних чисел
+/// Скидання мовного пакету
 
-public static long product (int ... numbers) {
+public static void reset() {
 
-    if (numbers == null) { throw new NullPointerException(); }
-    else if (numbers.length == 0) { throw new IllegalArgumentException(); }
-    else if (numbers.length == 1) { return numbers[0]; }
-
-    else {
-
-        long result = numbers[0];
-
-        for (int z = 1; z < numbers.length; z++) {
-            result *= numbers[z];
-        }
-
-        return result;
-    }
-}
-
-// ============================================================================
-/// Розрахунок середнього арифметичного значення
-/// @param numbers масив/перелік вхідних чисел
-/// @return середнє арифметичне значення
-
-public static double arithmeticMean (int ... numbers) {
-
-    if (numbers == null) { throw new NullPointerException(); }
-    else if (numbers.length == 0) { throw new IllegalArgumentException(); }
-    else if (numbers.length == 1) { return numbers[0]; }
-
-    else {
-
-        return sum(numbers) * 1d / numbers.length;
-
-    }
-}
-
-// ============================================================================
-/// Розрахунок середнього квадратичного значення
-/// @param numbers масив/перелік вхідних чисел
-/// @return середнє квадратичне значення
-
-public static double quadraticMean (int ... numbers) {
-
-    if (numbers == null) { throw new NullPointerException(); }
-    else if (numbers.length == 0) { throw new IllegalArgumentException(); }
-    else if (numbers.length == 1) { return numbers[0]; }
-
-    else {
-
-        for (int z = 0; z < numbers.length; z++)
-            { numbers[z] *= numbers[z]; }
-        
-        return Math.sqrt(sum(numbers) * 1d / numbers.length);
-    }
+    // Відновлюємо значення за замовчуванням
+    default_values.forEach((key, value) -> { 
+        UIManager.put(key, value);
+    });
 }
 
 // Кінець класу UATranslator ==================================================

@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <Form version="1.8" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <NonVisualComponents>
+    <Component class="javax.swing.ButtonGroup" name="bg_locale">
+    </Component>
+  </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
-    <Property name="title" type="java.lang.String" value="TeztApp Demo"/>
+    <Property name="title" type="java.lang.String" value="UA_Translator Demo"/>
     <Property name="resizable" type="boolean" value="false"/>
   </Properties>
   <SyntheticProperties>
@@ -27,17 +31,9 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
               <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                  <Component id="sep_one" alignment="0" max="32767" attributes="0"/>
-                  <Group type="102" alignment="1" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="lbl_hint" min="-2" pref="320" max="-2" attributes="0"/>
-                          <Component id="fld_input" alignment="0" min="-2" pref="320" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
-                      <Component id="btn_random" min="-2" pref="130" max="-2" attributes="0"/>
-                  </Group>
-                  <Component id="pnl_buttons" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="pnl_top" max="32767" attributes="0"/>
+                  <Component id="pnl_bottom" max="32767" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
           </Group>
@@ -47,97 +43,75 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="1" attributes="0">
-                  <Group type="102" attributes="0">
-                      <Component id="lbl_hint" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
-                      <Component id="fld_input" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <Component id="btn_random" min="-2" pref="44" max="-2" attributes="0"/>
-              </Group>
+              <Component id="pnl_top" min="-2" pref="50" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
-              <Component id="sep_one" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
-              <Component id="pnl_buttons" min="-2" max="-2" attributes="0"/>
+              <Component id="pnl_bottom" min="-2" pref="50" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JLabel" name="lbl_hint">
-      <Properties>
-        <Property name="horizontalAlignment" type="int" value="0"/>
-        <Property name="text" type="java.lang.String" value="&#x412;&#x432;&#x435;&#x434;&#x456;&#x442;&#x44c; &#x447;&#x438;&#x441;&#x43b;&#x430;, &#x440;&#x43e;&#x437;&#x434;&#x456;&#x43b;&#x44f;&#x44e;&#x447;&#x438; &#x457;&#x445; &#x43a;&#x43e;&#x43c;&#x43e;&#x44e;"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JTextField" name="fld_input">
-      <Properties>
-        <Property name="horizontalAlignment" type="int" value="0"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JButton" name="btn_random">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="&lt;html&gt;&lt;body align=&quot;center&quot;&gt;&#x417;&#x433;&#x435;&#x43d;&#x435;&#x440;&#x443;&#x432;&#x430;&#x442;&#x438;&lt;br/&gt;&#x432;&#x438;&#x43f;&#x430;&#x434;&#x43a;&#x43e;&#x432;&#x456; &#x447;&#x438;&#x441;&#x43b;&#x430;&lt;/body&gt;&lt;/html&gt;"/>
-        <Property name="toolTipText" type="java.lang.String" value="&lt;html&gt;&lt;body align=&quot;center&quot;&gt;&#x417;&#x433;&#x435;&#x43d;&#x435;&#x440;&#x443;&#x432;&#x430;&#x442;&#x438; &#x432;&#x438;&#x43f;&#x430;&#x434;&#x43a;&#x43e;&#x432;&#x443; &#x43a;&#x456;&#x43b;&#x44c;&#x43a;&#x456;&#x441;&#x442;&#x44c;&lt;br/&gt;&#x432;&#x438;&#x43f;&#x430;&#x434;&#x43a;&#x43e;&#x432;&#x438;&#x445; &#x447;&#x438;&#x441;&#x435;&#x43b;&lt;/body&gt;&lt;/html&gt;"/>
-        <Property name="actionCommand" type="java.lang.String" value="btn_random"/>
-        <Property name="margin" type="java.awt.Insets" editor="org.netbeans.beaninfo.editors.InsetsEditor">
-          <Insets value="[2, 2, 2, 2]"/>
-        </Property>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="onButtonClick"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JSeparator" name="sep_one">
-    </Component>
-    <Container class="javax.swing.JPanel" name="pnl_buttons">
+    <Container class="javax.swing.JPanel" name="pnl_top">
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.DesignGridLayout">
         <Property name="columns" type="int" value="0"/>
-        <Property name="horizontalGap" type="int" value="2"/>
+        <Property name="horizontalGap" type="int" value="5"/>
         <Property name="rows" type="int" value="1"/>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JButton" name="btn_sum">
+        <Component class="javax.swing.JButton" name="btn_file_chooser">
           <Properties>
-            <Property name="text" type="java.lang.String" value="&#x421;&#x443;&#x43c;&#x430;"/>
-            <Property name="toolTipText" type="java.lang.String" value="&#x420;&#x43e;&#x437;&#x440;&#x430;&#x445;&#x443;&#x432;&#x430;&#x442;&#x438; &#x441;&#x443;&#x43c;&#x443; &#x432;&#x432;&#x435;&#x434;&#x435;&#x43d;&#x438;&#x445; &#x447;&#x438;&#x441;&#x435;&#x43b;"/>
-            <Property name="actionCommand" type="java.lang.String" value="btn_sum"/>
+            <Property name="text" type="java.lang.String" value="JFileChooser"/>
+            <Property name="actionCommand" type="java.lang.String" value="open"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="onButtonClick"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="onButtonPressed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="btn_product">
+        <Component class="javax.swing.JButton" name="btn_color_chooser">
           <Properties>
-            <Property name="text" type="java.lang.String" value="&#x414;&#x43e;&#x431;&#x443;&#x442;&#x43e;&#x43a;"/>
-            <Property name="toolTipText" type="java.lang.String" value="&#x420;&#x43e;&#x437;&#x440;&#x430;&#x445;&#x443;&#x432;&#x430;&#x442;&#x438; &#x434;&#x43e;&#x431;&#x443;&#x442;&#x43e;&#x43a; &#x432;&#x432;&#x435;&#x434;&#x435;&#x43d;&#x438;&#x445; &#x447;&#x438;&#x441;&#x435;&#x43b;"/>
-            <Property name="actionCommand" type="java.lang.String" value="btn_product"/>
+            <Property name="text" type="java.lang.String" value="JColorChooser"/>
+            <Property name="actionCommand" type="java.lang.String" value="save"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="onButtonClick"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="onButtonPressed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="btn_aMean">
+        <Component class="javax.swing.JButton" name="btn_option_pane">
           <Properties>
-            <Property name="text" type="java.lang.String" value="x&#x305;"/>
-            <Property name="toolTipText" type="java.lang.String" value="&#x420;&#x43e;&#x437;&#x440;&#x430;&#x445;&#x443;&#x432;&#x430;&#x442;&#x438; &#x441;&#x435;&#x440;&#x435;&#x434;&#x43d;&#x454; &#x430;&#x440;&#x438;&#x444;&#x43c;&#x435;&#x442;&#x438;&#x447;&#x43d;&#x435; &#x437;&#x43d;&#x430;&#x447;&#x435;&#x43d;&#x43d;&#x44f;"/>
-            <Property name="actionCommand" type="java.lang.String" value="btn_aMean"/>
+            <Property name="text" type="java.lang.String" value="JOptionPane"/>
+            <Property name="actionCommand" type="java.lang.String" value="color"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="onButtonClick"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="onButtonPressed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="btn_qMean">
+      </SubComponents>
+    </Container>
+    <Container class="javax.swing.JPanel" name="pnl_bottom">
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.DesignGridLayout">
+        <Property name="columns" type="int" value="0"/>
+        <Property name="horizontalGap" type="int" value="5"/>
+        <Property name="rows" type="int" value="1"/>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JToggleButton" name="tbtn_ua">
           <Properties>
-            <Property name="text" type="java.lang.String" value="x(rms)"/>
-            <Property name="toolTipText" type="java.lang.String" value="&#x420;&#x43e;&#x437;&#x440;&#x430;&#x445;&#x443;&#x432;&#x430;&#x442;&#x438; &#x441;&#x435;&#x440;&#x435;&#x434;&#x43d;&#x454; &#x43a;&#x432;&#x430;&#x434;&#x440;&#x430;&#x442;&#x438;&#x447;&#x43d;&#x435; &#x437;&#x43d;&#x430;&#x447;&#x435;&#x43d;&#x43d;&#x44f;"/>
-            <Property name="actionCommand" type="java.lang.String" value="btn_qMean"/>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="bg_locale"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="&#x423;&#x43a;&#x440;&#x430;&#x457;&#x43d;&#x441;&#x44c;&#x43a;&#x430; &#x43b;&#x43e;&#x43a;&#x430;&#x43b;&#x456;&#x437;&#x430;&#x446;&#x456;&#x44f;"/>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="onButtonClick"/>
-          </Events>
+        </Component>
+        <Component class="javax.swing.JToggleButton" name="tbtn_default">
+          <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="bg_locale"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="&#x421;&#x442;&#x430;&#x43d;&#x434;&#x430;&#x440;&#x442;&#x43d;&#x430; &#x43b;&#x43e;&#x43a;&#x430;&#x43b;&#x456;&#x437;&#x430;&#x446;&#x456;&#x44f;"/>
+          </Properties>
         </Component>
       </SubComponents>
     </Container>
