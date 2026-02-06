@@ -53,9 +53,7 @@ private void initAppIcons() {
         icon = ImageIO.read(getClass().getResourceAsStream(resource));
         appIcons.add(icon); }
     
-    setIconImages(appIcons);
-    
-    }
+    setIconImages(appIcons); }
     
     catch (IOException _) { }
     
@@ -161,13 +159,17 @@ private void initAppIcons() {
     private void onButtonPressed(ActionEvent evt) {//GEN-FIRST:event_onButtonPressed
         // TODO add your handling code here:
         switch (evt.getActionCommand()) {
-            case "fileChooser"   -> new JFileChooser().showOpenDialog(this);
-            case "colorChooser"  -> JColorChooser.showDialog(this, null, null);
-            case "optionPane"    -> JOptionPane.showConfirmDialog(this, null);
-            case "localeUA"      -> UATranslator.init();
-            case "localeDefault" -> UATranslator.reset();
+            case "fileChooser"   ->
+                { new JFileChooser().showOpenDialog(this); }
+            case "colorChooser"  ->
+                { JColorChooser.showDialog(this, null, null); }
+            case "optionPane"    ->
+                { JOptionPane.showConfirmDialog(this, "Зберегти файл?"); }
+            case "localeUA"      ->
+                { UATranslator.init(); }
+            case "localeDefault" ->
+                { UATranslator.reset(); }
         }
-        //System.out.println(evt.getActionCommand());
     }//GEN-LAST:event_onButtonPressed
 
 // ============================================================================
