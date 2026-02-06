@@ -1,8 +1,12 @@
 package com.rutar.ua_translator;
 
+import java.io.*;
 import java.awt.*;
+import java.util.*;
 import javax.swing.*;
+import javax.imageio.*;
 import java.awt.event.*;
+import java.awt.image.*;
 
 // ............................................................................
 /// Демонстація основних можливостей бібліотеки
@@ -11,18 +15,11 @@ import java.awt.event.*;
 
 public class UATranslatorDemo extends JFrame {
 
-private final JFileChooser chooser = new JFileChooser();
-private final JColorChooser color = new JColorChooser();
-
 // ============================================================================
 /// Конструктор за замовчуванням
 
-public UATranslatorDemo() { 
-
-    //chooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
-    initComponents();
-
-}
+public UATranslatorDemo() { initComponents();
+                            initAppIcons(); }
 
 // ============================================================================
 /// Головний метод програми
@@ -31,7 +28,6 @@ public UATranslatorDemo() {
 public static void main (String args[]) {
 
     UATranslator.init();
-    //FlatDarkLaf.setup();
     
     // Правила оформлення проектів описані тут:
     // https://github.com/RutarAndriy/My_Coding_Rules
@@ -39,6 +35,30 @@ public static void main (String args[]) {
     EventQueue.invokeLater(() -> {
         new UATranslatorDemo().setVisible(true);
     });
+}
+
+// ============================================================================
+/// Встановленн іконок для головного вікна
+
+private void initAppIcons() {
+
+    BufferedImage icon;
+    ArrayList<Image> appIcons = new ArrayList<>();
+
+    try {
+        
+    for (String resource : new String[] { "icon_16.png",
+                                          "icon_32.png" }) {
+        resource = "icons/" + resource;
+        icon = ImageIO.read(getClass().getResourceAsStream(resource));
+        appIcons.add(icon); }
+    
+    setIconImages(appIcons);
+    
+    }
+    
+    catch (IOException _) { }
+    
 }
 
 // ============================================================================
@@ -66,7 +86,7 @@ public static void main (String args[]) {
         pnl_top.setLayout(new GridLayout(1, 0, 5, 0));
 
         btn_file_chooser.setText("JFileChooser");
-        btn_file_chooser.setActionCommand("open");
+        btn_file_chooser.setActionCommand("fileChooser");
         btn_file_chooser.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
                 onButtonPressed(evt);
@@ -75,7 +95,7 @@ public static void main (String args[]) {
         pnl_top.add(btn_file_chooser);
 
         btn_color_chooser.setText("JColorChooser");
-        btn_color_chooser.setActionCommand("save");
+        btn_color_chooser.setActionCommand("colorChooser");
         btn_color_chooser.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
                 onButtonPressed(evt);
@@ -84,7 +104,7 @@ public static void main (String args[]) {
         pnl_top.add(btn_color_chooser);
 
         btn_option_pane.setText("JOptionPane");
-        btn_option_pane.setActionCommand("color");
+        btn_option_pane.setActionCommand("optionPane");
         btn_option_pane.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
                 onButtonPressed(evt);
@@ -95,11 +115,24 @@ public static void main (String args[]) {
         pnl_bottom.setLayout(new GridLayout(1, 0, 5, 0));
 
         bg_locale.add(tbtn_ua);
+        tbtn_ua.setSelected(true);
         tbtn_ua.setText("Українська локалізація");
+        tbtn_ua.setActionCommand("localeUA");
+        tbtn_ua.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+                onButtonPressed(evt);
+            }
+        });
         pnl_bottom.add(tbtn_ua);
 
         bg_locale.add(tbtn_default);
         tbtn_default.setText("Стандартна локалізація");
+        tbtn_default.setActionCommand("localeDefault");
+        tbtn_default.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+                onButtonPressed(evt);
+            }
+        });
         pnl_bottom.add(tbtn_default);
 
         GroupLayout layout = new GroupLayout(getContentPane());
@@ -128,11 +161,13 @@ public static void main (String args[]) {
     private void onButtonPressed(ActionEvent evt) {//GEN-FIRST:event_onButtonPressed
         // TODO add your handling code here:
         switch (evt.getActionCommand()) {
-            case "open" -> { chooser.showOpenDialog(this); }
-            case "save" -> { chooser.showSaveDialog(this); }
-            case "color" -> { JColorChooser.showDialog(this, null, Color.yellow); }
-            case "message" -> { JOptionPane.showConfirmDialog(this, "Hello", "", JOptionPane.YES_OPTION, JOptionPane.ERROR_MESSAGE); }
+            case "fileChooser"   -> new JFileChooser().showOpenDialog(this);
+            case "colorChooser"  -> JColorChooser.showDialog(this, null, null);
+            case "optionPane"    -> JOptionPane.showConfirmDialog(this, null);
+            case "localeUA"      -> UATranslator.init();
+            case "localeDefault" -> UATranslator.reset();
         }
+        //System.out.println(evt.getActionCommand());
     }//GEN-LAST:event_onButtonPressed
 
 // ============================================================================

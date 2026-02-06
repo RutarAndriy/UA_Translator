@@ -63,7 +63,7 @@
         <Component class="javax.swing.JButton" name="btn_file_chooser">
           <Properties>
             <Property name="text" type="java.lang.String" value="JFileChooser"/>
-            <Property name="actionCommand" type="java.lang.String" value="open"/>
+            <Property name="actionCommand" type="java.lang.String" value="fileChooser"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="onButtonPressed"/>
@@ -72,7 +72,7 @@
         <Component class="javax.swing.JButton" name="btn_color_chooser">
           <Properties>
             <Property name="text" type="java.lang.String" value="JColorChooser"/>
-            <Property name="actionCommand" type="java.lang.String" value="save"/>
+            <Property name="actionCommand" type="java.lang.String" value="colorChooser"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="onButtonPressed"/>
@@ -81,7 +81,7 @@
         <Component class="javax.swing.JButton" name="btn_option_pane">
           <Properties>
             <Property name="text" type="java.lang.String" value="JOptionPane"/>
-            <Property name="actionCommand" type="java.lang.String" value="color"/>
+            <Property name="actionCommand" type="java.lang.String" value="optionPane"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="onButtonPressed"/>
@@ -102,8 +102,13 @@
             <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
               <ComponentRef name="bg_locale"/>
             </Property>
+            <Property name="selected" type="boolean" value="true"/>
             <Property name="text" type="java.lang.String" value="&#x423;&#x43a;&#x440;&#x430;&#x457;&#x43d;&#x441;&#x44c;&#x43a;&#x430; &#x43b;&#x43e;&#x43a;&#x430;&#x43b;&#x456;&#x437;&#x430;&#x446;&#x456;&#x44f;"/>
+            <Property name="actionCommand" type="java.lang.String" value="localeUA"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="onButtonPressed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JToggleButton" name="tbtn_default">
           <Properties>
@@ -111,7 +116,11 @@
               <ComponentRef name="bg_locale"/>
             </Property>
             <Property name="text" type="java.lang.String" value="&#x421;&#x442;&#x430;&#x43d;&#x434;&#x430;&#x440;&#x442;&#x43d;&#x430; &#x43b;&#x43e;&#x43a;&#x430;&#x43b;&#x456;&#x437;&#x430;&#x446;&#x456;&#x44f;"/>
+            <Property name="actionCommand" type="java.lang.String" value="localeDefault"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="onButtonPressed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
