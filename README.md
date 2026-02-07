@@ -1,7 +1,7 @@
 # UA Translator
 
-[![License](https://img.shields.io/github/license/RutarAndriy/UA_Translator?color=%23FF5555)](/LICENSE)
-[![](https://jitpack.io/v/RutarAndriy/UA_Translator.svg)](https://jitpack.io/#RutarAndriy/UA_Translator)
+[![License](https://img.shields.io/github/license/RutarAndriy/UA_Translator?label=%D0%9B%D1%96%D1%86%D0%B5%D0%BD%D0%B7%D1%96%D1%8F&color=%23FF5555)](/LICENSE)
+[![JitPack](https://jitpack.io/v/RutarAndriy/UA_Translator.svg)](https://jitpack.io/#RutarAndriy/UA_Translator)
 
 Бібліотека, яка дозволяє локалізувати стандартні swing-компоненти, такі як:
 - JFileChooser
@@ -11,8 +11,6 @@
 ## Використання
 
 ```java
-import com.rutar.ua_translator.UATranslator;
-
 // Встановити українську локалізацію
 UATranslator.init();
 
