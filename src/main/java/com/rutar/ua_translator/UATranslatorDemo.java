@@ -134,20 +134,20 @@ private void initAppIcons() {
     setLocationRelativeTo(null);
   }// </editor-fold>//GEN-END:initComponents
 
-    private void onButtonPressed(ActionEvent evt) {//GEN-FIRST:event_onButtonPressed
-      switch (evt.getActionCommand()) {
-          case "fileChooser"   ->
-              { new JFileChooser().showOpenDialog(this); }
-          case "colorChooser"  ->
-              { JColorChooser.showDialog(this, null, null); }
-          case "optionPane"    ->
-              { JOptionPane.showConfirmDialog(this, "Зберегти файл?"); }
-          case "localeUA"      ->
-              { UATranslator.init(); }
-          case "localeDefault" ->
-              { UATranslator.reset(); }
-      }
-    }//GEN-LAST:event_onButtonPressed
+  private void onButtonPressed(ActionEvent evt) {//GEN-FIRST:event_onButtonPressed
+    switch (evt.getActionCommand()) {
+        case "fileChooser"   ->
+            { new JFileChooser().showOpenDialog(this); }
+        case "colorChooser"  ->
+            { JColorChooser.showDialog(this, null, null); }
+        case "optionPane"    ->
+            { JOptionPane.showConfirmDialog(this, "Зберегти файл?"); }
+        case "localeUA"      ->
+            { UATranslator.init(); }
+        case "localeDefault" ->
+            { UATranslator.reset(); }
+    }
+  }//GEN-LAST:event_onButtonPressed
 
 // ============================================================================
 /// Список усіх об'явлених змінних
