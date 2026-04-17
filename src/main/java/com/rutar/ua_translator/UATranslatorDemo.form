@@ -21,7 +21,7 @@
     <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
     <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
     <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
-    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="3"/>
     <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
     <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
   </AuxValues>
@@ -60,7 +60,7 @@
         <Property name="rows" type="int" value="1"/>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JButton" name="btn_file_chooser">
+        <Component class="javax.swing.JButton" name="btn_fileChooser">
           <Properties>
             <Property name="text" type="java.lang.String" value="JFileChooser"/>
             <Property name="actionCommand" type="java.lang.String" value="fileChooser"/>
@@ -69,7 +69,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="onButtonPressed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="btn_color_chooser">
+        <Component class="javax.swing.JButton" name="btn_colorChooser">
           <Properties>
             <Property name="text" type="java.lang.String" value="JColorChooser"/>
             <Property name="actionCommand" type="java.lang.String" value="colorChooser"/>
@@ -78,7 +78,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="onButtonPressed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="btn_option_pane">
+        <Component class="javax.swing.JButton" name="btn_optionPane">
           <Properties>
             <Property name="text" type="java.lang.String" value="JOptionPane"/>
             <Property name="actionCommand" type="java.lang.String" value="optionPane"/>
