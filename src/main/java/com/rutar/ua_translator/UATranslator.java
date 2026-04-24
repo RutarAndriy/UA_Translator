@@ -19,30 +19,26 @@ private static final HashMap<Object, Object> default_values = new HashMap<>();
 
 public static void init() {
 
-    // Зчитуємо властивості з файлу ua.properties
+    // Зчитування властивостей з файлу ua.properties
     Properties properties = new Properties();
     try (InputStream is = UATranslator.class
                          .getResourceAsStream("others/ua.properties"))
         { properties.load(is); }
     catch (Exception _) { }
     
-    // Отримуємо системні значення та задаємо нові
-    properties.forEach((key, value) -> {
-        default_values.put(key, UIManager.get(key));
-        UIManager.put(key, value);
-    });
+    // Отримання системних значень та задання нових
+    properties.forEach((key, value) ->
+      { default_values.put(key, UIManager.get(key));
+        UIManager.put(key, value); });
 }
 
 // ============================================================================
 /// Скидання мовного пакету
 
-public static void reset() {
-
-    // Відновлюємо значення за замовчуванням
-    default_values.forEach((key, value) -> { 
-        UIManager.put(key, value);
-    });
-}
+public static void reset()
+  { // Відновлюємо значення за замовчуванням
+    default_values.forEach((key, value) ->
+      {  UIManager.put(key, value); }); }
 
 // Кінець класу UATranslator ==================================================
 

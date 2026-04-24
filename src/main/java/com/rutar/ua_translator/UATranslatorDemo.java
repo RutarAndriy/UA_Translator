@@ -28,11 +28,8 @@ public UATranslatorDemo() { initComponents();
 public static void main (String args[]) {
 
     UATranslator.init();
-    
-    // Правила оформлення проектів описані тут:
-    // https://github.com/RutarAndriy/My_Coding_Rules
 
-    EventQueue.invokeLater(() -> {
+    SwingUtilities.invokeLater(() -> {
         new UATranslatorDemo().setVisible(true);
     });
 }
@@ -48,14 +45,15 @@ private void initAppIcons() {
     try {
         
     for (String resource : new String[] { "icon_16.png",
-                                          "icon_32.png" }) {
-        resource = "icons/" + resource;
+                                          "icon_32.png" })
+      { resource = "icons/" + resource;
         icon = ImageIO.read(getClass().getResourceAsStream(resource));
         appIcons.add(icon); }
     
     setIconImages(appIcons); }
     
-    catch (IOException _) { } }
+    catch (IOException _) { }
+}
 
 // ============================================================================
 /// Цей метод викликається з конструктора для ініціалізації форми.
