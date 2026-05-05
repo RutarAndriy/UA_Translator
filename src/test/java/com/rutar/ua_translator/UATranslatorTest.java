@@ -1,8 +1,8 @@
 package com.rutar.ua_translator;
 
-import java.io.*;
-import java.net.*;
 import org.junit.jupiter.api.*;
+import org.junit.jupiter.params.*;
+import org.junit.jupiter.params.provider.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -11,39 +11,37 @@ import static org.junit.jupiter.api.Assertions.*;
 /// @author Rutar_Andriy
 /// 31.01.2026
 
-@DisplayName("Main test class")
+@DisplayName("UATranslatorTest class")
 public class UATranslatorTest {
 
 // ============================================================================
 
 @Test
 @DisplayName("Should pass")
-void should_Answer_With_True()
-    { assertTrue(true); }
+void shouldAnswerWithTrue()
+  { assertTrue(true); }
 
 // ============================================================================
 
 @Test
 @DisplayName("File .empty exist")
-void file_Empty_Exist()
-    { assertNotNull(getClass().getResource(".empty")); }
+void fileEmptyExist()
+  { assertNotNull(getClass().getResource(".empty")); }
 
 // ============================================================================
     
 // @Test
 // @Disabled("skipped")
 // @DisplayName("Should skip")
-// void should_Skip() {
-//     fail("This error will be skipped");
-// }
+// void shouldSkip()
+//   { fail("This error will be skipped"); }
 
 // ============================================================================
 
 // @Test
 // @DisplayName("Should fail")
-// void should_Fail() {
-//     fail("Some error ...");
-// }
+// void shouldFail()
+//   { fail("Some error ..."); }
 
 // Кінець класу UATranslatorTest ==============================================
 
